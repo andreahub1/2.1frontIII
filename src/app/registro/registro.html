@@ -1,0 +1,57 @@
+<div class="contenedor">
+
+    <div class="formulario">
+        <h1>Registro</h1>
+        <p>Completa los siguientes datos</p>
+
+        <form #formulario="ngForm" (ngSubmit)="registrar()">
+
+            <div class="campo">
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" [(ngModel)]="usuario.nombre" required>
+            </div>
+
+            <div class="campo">
+                <label>Correo electrónico</label>
+                <input type="email" name="correo" [(ngModel)]="usuario.correo" required>
+            </div>
+
+            <div class="campo">
+                <label>Teléfono</label>
+                <input type="tel" name="telefono" [(ngModel)]="usuario.telefono" required>
+            </div>
+
+            <div class="campo">
+                <label>Edad</label>
+                <input type="number" name="edad" [(ngModel)]="usuario.edad" required>
+            </div>
+
+            <div class="campo">
+                <label>Contraseña</label>
+                <input type="password" name="contrasena" [(ngModel)]="usuario.contrasena" required>
+            </div>
+
+            <div class="campo">
+                <label>Confirmación de contraseña</label>
+                <input type="password" name="confirmarContrasena" [(ngModel)]="usuario.confirmarContrasena" required>
+            </div>
+
+            <button type="submit">Registrar</button>
+
+        </form>
+    </div>
+
+    @if (registrado) {
+    <div class="resultado">
+        <h2>Información registrada</h2>
+
+        <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+        <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+        <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+        <p><strong>Edad:</strong> {{ usuario.edad }}</p>
+        <p><strong>Contraseña:</strong> ********</p>
+        <p><strong>Confirmación:</strong> ********</p>
+    </div>
+    }
+
+</div>
